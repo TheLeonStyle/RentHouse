@@ -14,8 +14,9 @@
 				<button
 					class="gallery__category"
 					class:active={categoryIndex === index}
-					onclick={() => handleCategoryClick(index)}>{category}</button
-				>
+					onclick={() => handleCategoryClick(index)}>
+					{category}
+				</button>
 			{/each}
 		</nav>
 
@@ -44,6 +45,8 @@
 
 <style lang="scss">
 	.gallery {
+		@include adaptiveValue('padding-top', 50, 30, 991, 320, 1);
+		@include adaptiveValue('padding-bottom', 50, 30, 991, 320, 1);
 		/* .gallery__container */
 		&__container {
 		}
@@ -65,7 +68,7 @@
 		}
 		/* .gallery__category */
 		&__category {
-			color: #ffffff;
+			color: #111111;
 			// font-size: rem(24);
 			@include adaptiveValue('font-size', 24, 16, 767, 320, 1);
 			font-weight: 500;

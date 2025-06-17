@@ -100,6 +100,8 @@
 
 <style lang="scss">
 	.contacts {
+		@include adaptiveValue('padding-top', 50, 30, 991, 320, 1);
+		@include adaptiveValue('padding-bottom', 50, 30, 991, 320, 1);
 		/* .contacts__container */
 		&__container {
 			display: flex;
