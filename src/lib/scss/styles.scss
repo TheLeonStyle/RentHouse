@@ -9,7 +9,7 @@ body {
 .text {
 	color: #2b7af1;
 	// font-size: rem(36);
-	@include adaptiveValue("font-size", 36, 24, 767, 320, 1);
+	@include adaptiveValue("font-size", 36, 24, 991, 320, 1);
 	font-weight: 700;
 	line-height: math.div(44, 36);
 }

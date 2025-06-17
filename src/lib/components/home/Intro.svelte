@@ -95,6 +95,7 @@
 			}
 
 			@media (max-width: $mobile) {
+				height: 100%;
 				position: absolute;
 				left: 0;
 				right: 0;

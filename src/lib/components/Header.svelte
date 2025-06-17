@@ -1,8 +1,14 @@
+<script>
+	let isMenuOpen = $state(false);
+
+	const handleBurgerClick = () => (isMenuOpen = !isMenuOpen);
+</script>
+
 <header class="header">
 	<div class="header__container">
 		<a href="/" class="header__logo">RentHouse</a>
 
-		<nav class="header__nav">
+		<nav class="header__menu">
 			<button class="header__button">Фотогалерея</button>
 			<button class="header__button">Контакты</button>
 		</nav>
@@ -38,36 +44,56 @@
 			</a>
 			<button class="header__button header__button--feedback">Заказать звонок</button>
 		</nav>
+
+		<button class="header__burger" class:active={isMenuOpen} onclick={handleBurgerClick}>
+			<span></span>
+		</button>
 	</div>
 </header>
 
 <style lang="scss">
 	.header {
-		padding: rem(15) 0;
+		padding: rem(20) 0;
 		/* .header__container */
 		&__container {
 			display: flex;
 			// justify-content: space-between;
 			align-items: center;
 			gap: rem(40);
+			@include adaptiveValue('gap', 40, 20, 991, 767, 1);
+
+			@media (max-width: $mobile) {
+				justify-content: space-between;
+			}
 		}
 		/* .header__logo */
 		&__logo {
 			color: #2b7af1;
-			font-size: rem(32);
+			// font-size: rem(32);
+			@include adaptiveValue('font-size', 32, 26, 991, 767, 1);
 			font-weight: 700;
 			line-height: math.div(50, 32);
 		}
-		/* .header__nav */
-		&__nav {
-			flex: 1 1 auto;
+		/* .header__menu */
+		&__menu {
+			flex: 1;
 
 			display: flex;
 			align-items: center;
-			gap: rem(20);
+			@include adaptiveValue('gap', 20, 10, 991, 767, 1);
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+		/* .header__nav */
+		&__nav {
+			display: flex;
+			align-items: center;
+			// gap: rem(20);
+			@include adaptiveValue('gap', 20, 10, 991, 767, 1);
 
-			&:last-child {
-				justify-content: flex-end;
+			@media (max-width: $mobile) {
+				display: none;
 			}
 		}
 		/* .header__button */
@@ -87,7 +113,10 @@
 				border-radius: rem(20);
 				box-shadow: 0 rem(10) rem(20) 0 rgba(255, 122, 0, 0.2);
 				background: linear-gradient(87deg, rgb(255, 122, 0) 0.07%, rgb(255, 176, 57) 100%);
-				padding: rem(10) rem(30);
+				padding-top: rem(10);
+				padding-bottom: rem(10);
+				@include adaptiveValue('padding-left', 30, 16, 991, 767, 1);
+				@include adaptiveValue('padding-right', 30, 16, 991, 767, 1);
 			}
 		}
 		/* .header__link */
@@ -107,6 +136,66 @@
 			@include adaptiveValue('height', 40, 35, 767, 320, 1);
 			background-color: #2b7af1;
 			border-radius: 50%;
+		}
+
+		&__burger {
+			display: none;
+			@include adaptiveValue('width', 40, 34, 991, 767, 1);
+			height: rem(22);
+			position: relative;
+			z-index: 5;
+
+			@media (max-width: $mobile) {
+				display: block;
+			}
+
+			&:before,
+			&::after,
+			span {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: rem(3);
+				background-color: #2b7af1;
+				transition:
+					width 0.15s ease 0s,
+					top 0.3s ease 0s,
+					transform 0.3s ease 0s;
+			}
+
+			&::before {
+				left: 0;
+				top: 0;
+			}
+
+			span {
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			&::after {
+				bottom: 0;
+				right: 0;
+			}
+
+			&.active {
+				&::before {
+					width: 100%;
+					top: 50%;
+					transform: translateY(-50%) rotate(-45deg);
+				}
+
+				span {
+					width: 0;
+				}
+
+				&::after {
+					width: 100%;
+					top: 50%;
+					transform: translateY(-50%) rotate(45deg);
+				}
+			}
 		}
 	}
 </style>
