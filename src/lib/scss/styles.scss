@@ -2,5 +2,14 @@
 @use "null.scss" as *;
 
 body {
+	background-color: #141414;
 	font-family: "Montserrat", sans-serif;
+}
+
+.text {
+	color: #2b7af1;
+	// font-size: rem(36);
+	@include adaptiveValue("font-size", 36, 24, 767, 320, 1);
+	font-weight: 700;
+	line-height: math.div(44, 36);
 }
