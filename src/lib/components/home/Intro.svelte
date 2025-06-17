@@ -7,7 +7,10 @@
 		</div>
 
 		<div class="intro__image">
-			<img src="http://placeskull.com/500/500" alt="" loading="lazy" />
+			<img
+				src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg"
+				alt=""
+				loading="lazy" />
 		</div>
 	</div>
 </section>
@@ -100,7 +103,7 @@
 				left: 0;
 				right: 0;
 				z-index: -1;
-				opacity: 0.7;
+				opacity: 0.4;
 			}
 		}
 	}

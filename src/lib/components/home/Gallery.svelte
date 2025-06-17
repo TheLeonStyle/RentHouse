@@ -22,22 +22,46 @@
 
 		<ul class="gallery__items">
 			<li class="gallery__item">
-				<img src="http://placeskull.com/500/500" alt="" class="gallery__image" loading="lazy" />
+				<img
+					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg"
+					alt=""
+					class="gallery__image"
+					loading="lazy" />
 			</li>
 			<li class="gallery__item">
-				<img src="http://placeskull.com/800/500" alt="" class="gallery__image" loading="lazy" />
+				<img
+					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-2.jpg"
+					alt=""
+					class="gallery__image"
+					loading="lazy" />
 			</li>
 			<li class="gallery__item">
-				<img src="http://placeskull.com/500/700" alt="" class="gallery__image" loading="lazy" />
+				<img
+					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-3.jpg"
+					alt=""
+					class="gallery__image"
+					loading="lazy" />
 			</li>
 			<li class="gallery__item">
-				<img src="http://placeskull.com/300/100" alt="" class="gallery__image" loading="lazy" />
+				<img
+					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-19.jpg"
+					alt=""
+					class="gallery__image"
+					loading="lazy" />
 			</li>
 			<li class="gallery__item">
-				<img src="http://placeskull.com/1000/500" alt="" class="gallery__image" loading="lazy" />
+				<img
+					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-18.jpg"
+					alt=""
+					class="gallery__image"
+					loading="lazy" />
 			</li>
 			<li class="gallery__item">
-				<img src="http://placeskull.com/500/200" alt="" class="gallery__image" loading="lazy" />
+				<img
+					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-17.jpg"
+					alt=""
+					class="gallery__image"
+					loading="lazy" />
 			</li>
 		</ul>
 	</div>
