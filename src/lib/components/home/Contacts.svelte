@@ -183,7 +183,7 @@
 			// font-size: rem(18);
 			@include adaptiveValue('font-size', 18, 16, 767, 320, 1);
 
-			font-weight: 700;
+			font-weight: 600;
 			line-height: math.div(22, 18);
 
 			border-radius: rem(20);

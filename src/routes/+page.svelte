@@ -3,5 +3,5 @@
 	import Contacts from '$lib/components/home/Contacts.svelte';
 </script>
 
-<!-- <Gallery /> -->
-<!-- <Contacts /> -->
+<!-- <Gallery />
+<Contacts /> -->
