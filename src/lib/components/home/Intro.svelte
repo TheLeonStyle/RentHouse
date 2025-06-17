@@ -32,6 +32,7 @@
 		}
 		/* .intro__content */
 		&__content {
+			flex: 1 1 50%;
 			@media (max-width: $mobile) {
 				width: 100%;
 				text-align: center;
