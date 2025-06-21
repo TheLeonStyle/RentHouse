@@ -1,114 +1,191 @@
-<section class="intro">
-	<div class="intro__container">
-		<div class="intro__content">
-			<h1 class="intro__title">Аренда дома в Москве</h1>
-			<p class="intro__subtitle">На длительный срок или посуточно</p>
-			<button class="intro__button">Заказать звонок</button>
-		</div>
+<script>
+	import KeenSlider from 'keen-slider';
+	import { onMount } from 'svelte';
 
-		<div class="intro__image">
-			<img
-				src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg"
-				alt=""
-				loading="lazy" />
-		</div>
-	</div>
+	let slider = null;
+	let sliderRef = null;
+
+	const slidePrev = () => {
+		slider.prev();
+	};
+	const slideNext = () => {
+		slider.next();
+	};
+
+	onMount(() => {
+		slider = new KeenSlider(sliderRef, {
+			mode: 'free-snap',
+			loop: true,
+			slides: {
+				perView: 1
+			},
+			defaultAnimation: {
+				duration: 3000,
+				easing: (time) => 1 - Math.pow(1 - time, 4)
+			}
+		});
+	});
+</script>
+
+<section class="intro">
+	<ul bind:this={sliderRef} class="intro__items">
+		<li class="intro__item keen-slider__slide">
+			<div class="intro__text intro__text--left">
+				<h2 class="intro__title">Уютный гостевой дом "Premium Царев"</h2>
+				<p class="intro__subtitle">
+					Тихий уголок на берегу реки всего в 10 минутах от центра Астрахани
+				</p>
+			</div>
+		</li>
+		<li class="intro__item keen-slider__slide">
+			<div class="intro__text intro__text--center">
+				<h2 class="intro__title">Всё продумано для вашего комфорта</h2>
+				<p class="intro__subtitle">
+					Полностью укомплектованный дом: кухня, спальные комнаты, бассейн, баня, мангальная зона
+				</p>
+			</div>
+		</li>
+		<li class="intro__item keen-slider__slide">
+			<div class="intro__text intro__text--right">
+				<h2 class="intro__title">Бассейн с подогревом и гидромассажем</h2>
+				<p class="intro__subtitle">Чистая вода круглый год, полотенца предоставляются бесплатно</p>
+			</div>
+		</li>
+		<li class="intro__item keen-slider__slide">
+			<div class="intro__text intro__text--right">
+				<h2 class="intro__title">Настоящая баня на дровах</h2>
+				<p class="intro__subtitle">
+					Парная с вениками, травяной чай и натуральный мёд в зоне отдыха
+				</p>
+			</div>
+		</li>
+	</ul>
+
+	<button class="intro__button intro__button--prev" onclick={slidePrev}>
+		<svg viewBox="0 0 24 24">
+			<path
+				d="M14 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 1 1 1.414 1.414L11.414 12l3.293 3.293A1 1 0 0 1 14 17z" />
+		</svg>
+	</button>
+
+	<button class="intro__button intro__button--next" onclick={slideNext}>
+		<svg viewBox="0 0 24 24">
+			<path
+				d="M14 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 1 1 1.414 1.414L11.414 12l3.293 3.293A1 1 0 0 1 14 17z" />
+		</svg>
+	</button>
 </section>
 
 <style lang="scss">
 	.intro {
-		padding-top: rem(100);
-
-		@media (max-width: $mobile) {
-			padding-top: rem(00);
-		}
-		/* .intro__container */
-		&__container {
+		position: relative;
+		/* .intro__items */
+		&__items {
 			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: rem(40);
+			overflow: hidden;
 
-			@media (max-width: $mobile) {
-				flex-direction: column;
-				align-items: start;
-				gap: rem(20);
+			// height: 100vh;
+			height: rem(740);
+		}
+		/* .intro__item */
+		&__item {
+			padding-top: rem(100);
+			padding-bottom: rem(100);
+			// padding-left: rem(80);
+			// padding-right: rem(80);
+			@include adaptiveValue('padding-left', 80, 40, 767, 320, 1);
+			@include adaptiveValue('padding-right', 80, 40, 767, 320, 1);
 
-				position: relative;
-				overflow: hidden;
+			&:nth-child(1) {
+				background:
+					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
+					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg') center /
+						cover no-repeat;
+			}
+			&:nth-child(2) {
+				background:
+					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
+					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-2.jpg') center /
+						cover no-repeat;
+			}
+			&:nth-child(3) {
+				background:
+					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
+					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-3.jpg') center /
+						cover no-repeat;
+			}
+			&:nth-child(4) {
+				background:
+					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
+					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-19.jpg') center /
+						cover no-repeat;
 			}
 		}
-		/* .intro__content */
-		&__content {
-			flex: 1 1 50%;
-			@media (max-width: $mobile) {
-				width: 100%;
-				text-align: center;
 
-				padding-top: rem(150);
-				padding-bottom: rem(150);
+		/* .intro__text */
+		&__text {
+			max-width: rem(650);
+
+			&--left {
+				border-left: rem(5) solid #ffffff;
+				padding-left: rem(20);
+			}
+			&--right {
+				margin-left: auto;
+				border-right: rem(5) solid #ffffff;
+				padding-right: rem(20);
+				text-align: right;
+			}
+			&--center {
+				margin: 0 auto;
+				text-align: center;
 			}
 		}
 		/* .intro__title */
 		&__title {
-			color: #111111;
-			// font-size: rem(40);
-			@include adaptiveValue('font-size', 40, 26, 767, 320, 1);
+			color: #ffffff;
+			// font-size: rem(48);
+			@include adaptiveValue('font-size', 48, 26, 991, 479, 1);
 			font-weight: 700;
-			line-height: math.div(50, 40);
+			line-height: math.div(54, 48);
 
-			margin-bottom: rem(20);
-
-			@media (max-width: $mobile) {
-				color: #2b7af1;
-			}
+			margin-bottom: rem(10);
 		}
 		/* .intro__subtitle */
 		&__subtitle {
-			color: #111111;
+			color: #ffffff;
 			// font-size: rem(24);
-			@include adaptiveValue('font-size', 24, 20, 767, 320, 1);
+			@include adaptiveValue('font-size', 24, 20, 991, 479, 1);
+			font-weight: 600;
 			line-height: math.div(32, 24);
-
-			// margin-bottom: rem(50);
-			@include adaptiveValue('margin-bottom', 50, 20, 991, 767, 1);
-
-			@media (max-width: $mobile) {
-				color: #2b7af1;
-			}
 		}
+
 		/* .intro__button */
 		&__button {
-			color: #ffffff;
-			@include adaptiveValue('font-size', 18, 16, 767, 320, 1);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
 
-			font-weight: 600;
-			line-height: math.div(22, 18);
+			svg {
+				// width: rem(70);
+				// height: rem(70);
 
-			border-radius: rem(20);
-			box-shadow: 0 rem(10) rem(20) 0 rgba(255, 122, 0, 0.2);
-			background: linear-gradient(87deg, rgb(255, 122, 0) 0.07%, rgb(255, 176, 57) 100%);
-			padding: rem(10) rem(30);
-		}
-		/* .intro__image */
-		&__image {
-			flex: 1 1 100%;
-			width: 100%;
-			height: rem(473);
+				@include adaptiveValue('width', 70, 50, 767, 320, 1);
+				@include adaptiveValue('height', 70, 50, 767, 320, 1);
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
+				path {
+					fill: #ffffff;
+				}
 			}
 
-			@media (max-width: $mobile) {
-				height: 100%;
-				position: absolute;
+			/* .intro__button--prev */
+			&--prev {
 				left: 0;
+			}
+			/* .intro__button--next */
+			&--next {
 				right: 0;
-				z-index: -1;
-				opacity: 0.4;
+				transform: rotate(-180deg) translateY(50%);
 			}
 		}
 	}
