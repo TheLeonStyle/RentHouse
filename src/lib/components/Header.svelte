@@ -53,7 +53,19 @@
 
 <style lang="scss">
 	.header {
-		padding: rem(20) 0;
+		background-color: #ffffff;
+		box-shadow: 0 rem(5) rem(10) 0 rgba(#111111, 0.3);
+
+		padding: rem(10) 0;
+
+		@media (min-width: $mobile) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 10;
+		}
+
 		/* .header__container */
 		&__container {
 			display: flex;

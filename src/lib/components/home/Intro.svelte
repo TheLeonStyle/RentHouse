@@ -17,6 +17,11 @@
 
 <style lang="scss">
 	.intro {
+		padding-top: rem(100);
+
+		@media (max-width: $mobile) {
+			padding-top: rem(00);
+		}
 		/* .intro__container */
 		&__container {
 			display: flex;
