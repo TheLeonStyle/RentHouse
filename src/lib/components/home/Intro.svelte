@@ -30,33 +30,43 @@
 <section class="intro">
 	<ul bind:this={sliderRef} class="intro__items">
 		<li class="intro__item keen-slider__slide">
-			<div class="intro__text intro__text--left">
-				<h2 class="intro__title">Уютный гостевой дом "Premium Царев"</h2>
-				<p class="intro__subtitle">
-					Тихий уголок на берегу реки всего в 10 минутах от центра Астрахани
-				</p>
+			<div class="intro__container">
+				<div class="intro__text intro__text--left">
+					<h2 class="intro__title">Уютный гостевой дом "Premium Царев"</h2>
+					<p class="intro__subtitle">
+						Тихий уголок на берегу реки всего в 10 минутах от центра Астрахани
+					</p>
+				</div>
 			</div>
 		</li>
 		<li class="intro__item keen-slider__slide">
-			<div class="intro__text intro__text--center">
-				<h2 class="intro__title">Всё продумано для вашего комфорта</h2>
-				<p class="intro__subtitle">
-					Полностью укомплектованный дом: кухня, спальные комнаты, бассейн, баня, мангальная зона
-				</p>
+			<div class="intro__container">
+				<div class="intro__text intro__text--center">
+					<h2 class="intro__title">Всё продумано для вашего комфорта</h2>
+					<p class="intro__subtitle">
+						Полностью укомплектованный дом: кухня, спальные комнаты, бассейн, баня, мангальная зона
+					</p>
+				</div>
 			</div>
 		</li>
 		<li class="intro__item keen-slider__slide">
-			<div class="intro__text intro__text--right">
-				<h2 class="intro__title">Бассейн с подогревом и гидромассажем</h2>
-				<p class="intro__subtitle">Чистая вода круглый год, полотенца предоставляются бесплатно</p>
+			<div class="intro__container">
+				<div class="intro__text intro__text--right">
+					<h2 class="intro__title">Бассейн с подогревом и гидромассажем</h2>
+					<p class="intro__subtitle">
+						Чистая вода круглый год, полотенца предоставляются бесплатно
+					</p>
+				</div>
 			</div>
 		</li>
 		<li class="intro__item keen-slider__slide">
-			<div class="intro__text intro__text--right">
-				<h2 class="intro__title">Настоящая баня на дровах</h2>
-				<p class="intro__subtitle">
-					Парная с вениками, травяной чай и натуральный мёд в зоне отдыха
-				</p>
+			<div class="intro__container">
+				<div class="intro__text intro__text--left">
+					<h2 class="intro__title">Настоящая баня на дровах</h2>
+					<p class="intro__subtitle">
+						Парная с вениками, травяной чай и натуральный мёд в зоне отдыха
+					</p>
+				</div>
 			</div>
 		</li>
 	</ul>
@@ -85,40 +95,38 @@
 			overflow: hidden;
 
 			// height: 100vh;
-			height: rem(740);
+			height: rem(810);
+			max-height: 100vh;
 		}
 		/* .intro__item */
 		&__item {
-			padding-top: rem(100);
+			// padding-top: rem(170);
 			padding-bottom: rem(100);
 			// padding-left: rem(80);
 			// padding-right: rem(80);
+			@include adaptiveValue('padding-top', 170, 100, 767, 320, 1);
 			@include adaptiveValue('padding-left', 80, 40, 767, 320, 1);
 			@include adaptiveValue('padding-right', 80, 40, 767, 320, 1);
 
 			&:nth-child(1) {
 				background:
-					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
-					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg') center /
-						cover no-repeat;
+					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
+					url('./img/home/intro/bg.webp') center / cover no-repeat;
 			}
 			&:nth-child(2) {
 				background:
-					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
-					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-2.jpg') center /
-						cover no-repeat;
+					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
+					url('./img/home/intro/bg2.webp') center / cover no-repeat;
 			}
 			&:nth-child(3) {
 				background:
-					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
-					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-3.jpg') center /
-						cover no-repeat;
+					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
+					url('./img/home/intro/bg3.webp') center / cover no-repeat;
 			}
 			&:nth-child(4) {
 				background:
-					linear-gradient(to bottom, rgba(#111111, 0.3), rgba(#111111, 0.7)),
-					url('https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-19.jpg') center /
-						cover no-repeat;
+					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
+					url('./img/home/intro/bg4.webp') center / cover no-repeat;
 			}
 		}
 
@@ -145,7 +153,7 @@
 		&__title {
 			color: #ffffff;
 			// font-size: rem(48);
-			@include adaptiveValue('font-size', 48, 26, 991, 479, 1);
+			@include adaptiveValue('font-size', 48, 22, 991, 320, 1);
 			font-weight: 700;
 			line-height: math.div(54, 48);
 
@@ -155,7 +163,7 @@
 		&__subtitle {
 			color: #ffffff;
 			// font-size: rem(24);
-			@include adaptiveValue('font-size', 24, 20, 991, 479, 1);
+			@include adaptiveValue('font-size', 24, 18, 991, 320, 1);
 			font-weight: 600;
 			line-height: math.div(32, 24);
 		}

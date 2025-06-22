@@ -53,13 +53,13 @@
 
 <style lang="scss">
 	.header {
-		background-color: #ffffff;
-		box-shadow: 0 rem(5) rem(10) 0 rgba(#111111, 0.3);
+		// background-color: #ffffff;
+		// box-shadow: 0 rem(5) rem(10) 0 rgba(#111111, 0.3);
 
 		padding: rem(10) 0;
 
 		@media (min-width: $mobile) {
-			position: fixed;
+			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -110,7 +110,7 @@
 		}
 		/* .header__button */
 		&__button {
-			color: #111111;
+			color: #ffffff;
 			font-size: inherit;
 			font-weight: 600;
 			line-height: math.div(20, 16);
