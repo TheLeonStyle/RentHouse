@@ -111,22 +111,22 @@
 			&:nth-child(1) {
 				background:
 					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
-					url('./img/home/intro/bg.webp') center / cover no-repeat;
+					url('/img/home/intro/bg.webp') center / cover no-repeat;
 			}
 			&:nth-child(2) {
 				background:
 					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
-					url('./img/home/intro/bg2.webp') center / cover no-repeat;
+					url('/img/home/intro/bg2.webp') center / cover no-repeat;
 			}
 			&:nth-child(3) {
 				background:
 					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
-					url('./img/home/intro/bg3.webp') center / cover no-repeat;
+					url('/img/home/intro/bg3.webp') center / cover no-repeat;
 			}
 			&:nth-child(4) {
 				background:
 					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
-					url('./img/home/intro/bg4.webp') center / cover no-repeat;
+					url('/img/home/intro/bg4.webp') center / cover no-repeat;
 			}
 		}
 

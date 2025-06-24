@@ -73,7 +73,7 @@
 	.footer {
 		background:
 			linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
-			url('./img/footer/bg.jpeg') center / cover no-repeat;
+			url('/img/footer/bg.jpeg') center / cover no-repeat;
 
 		// padding-top: rem(400);
 		@include adaptiveValue('padding-top', 400, 50, 991, 767, 1);
