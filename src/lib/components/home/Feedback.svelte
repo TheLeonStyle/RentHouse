@@ -49,6 +49,7 @@
 
 			border-radius: rem(10);
 			background-color: #ffffff;
+			box-shadow: 0 rem(5) rem(10) 0 rgba(#111111, 0.3);
 			// padding: rem(40) rem(50);
 
 			@include adaptiveValue('padding-top', 40, 20, 767, 320, 1);
