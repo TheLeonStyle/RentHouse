@@ -1,6 +1,35 @@
 <script>
+	import { scale } from 'svelte/transition';
+
 	const categories = ['Все', 'Дом снаружи', 'Дом внутри'];
 	let categoryIndex = $state(0);
+
+	const images = [
+		{
+			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg',
+			category: 1
+		},
+		{
+			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-4.jpg',
+			category: 1
+		},
+		{
+			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-2.jpg',
+			category: 2
+		},
+		{
+			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-18.jpg',
+			category: 2
+		},
+		{
+			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-20.jpg',
+			category: 1
+		},
+		{
+			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-22.jpg',
+			category: 2
+		}
+	];
 
 	const handleCategoryClick = (index) => (categoryIndex = index);
 </script>
@@ -21,48 +50,13 @@
 		</nav>
 
 		<ul class="gallery__items">
-			<li class="gallery__item">
-				<img
-					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg"
-					alt=""
-					class="gallery__image"
-					loading="lazy" />
-			</li>
-			<li class="gallery__item">
-				<img
-					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-2.jpg"
-					alt=""
-					class="gallery__image"
-					loading="lazy" />
-			</li>
-			<li class="gallery__item">
-				<img
-					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-3.jpg"
-					alt=""
-					class="gallery__image"
-					loading="lazy" />
-			</li>
-			<li class="gallery__item">
-				<img
-					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-19.jpg"
-					alt=""
-					class="gallery__image"
-					loading="lazy" />
-			</li>
-			<li class="gallery__item">
-				<img
-					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-18.jpg"
-					alt=""
-					class="gallery__image"
-					loading="lazy" />
-			</li>
-			<li class="gallery__item">
-				<img
-					src="https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-17.jpg"
-					alt=""
-					class="gallery__image"
-					loading="lazy" />
-			</li>
+			{#each images as image, index}
+				{#if categoryIndex === 0 || categoryIndex === image.category}
+					<li class="gallery__item" transition:scale>
+						<img src={image.src} alt="" class="gallery__image" loading="lazy" />
+					</li>
+				{/if}
+			{/each}
 		</ul>
 	</div>
 </section>
@@ -94,7 +88,7 @@
 		&__category {
 			color: #111111;
 			// font-size: rem(24);
-			@include adaptiveValue('font-size', 24, 16, 767, 320, 1);
+			@include adaptiveValue('font-size', 20, 16, 767, 320, 1);
 			font-weight: 500;
 			line-height: math.div(30, 24);
 			position: relative;
