@@ -28,10 +28,6 @@
 		{
 			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-22.jpg',
 			category: 2
-		},
-		{
-			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-22.jpg',
-			category: 2
 		}
 	];
 
@@ -140,6 +136,7 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			cursor: pointer;
 			transition: transform 0.3s ease 0s;
 
 			&:hover {
