@@ -1,5 +1,7 @@
 <script>
 	import { scale } from 'svelte/transition';
+	import { galleryStore, isGalleryOpen } from '$lib/stores';
+	import GallerySlider from '$lib/components/utils/GallerySlider.svelte';
 
 	const categories = ['Все', 'Дом снаружи', 'Дом внутри'];
 	let categoryIndex = $state(0);
@@ -32,6 +34,10 @@
 	];
 
 	const handleCategoryClick = (index) => (categoryIndex = index);
+
+	let filteredImages = $derived(
+		categoryIndex === 0 ? images : images.filter((img) => img.category === categoryIndex)
+	);
 </script>
 
 <section class="gallery">
@@ -50,21 +56,31 @@
 		</nav>
 
 		<ul class="gallery__items">
-			{#each images as image, index}
+			{#each filteredImages as image, index}
 				{#if categoryIndex === 0 || categoryIndex === image.category}
 					<li class="gallery__item" transition:scale>
-						<img src={image.src} alt="" class="gallery__image" loading="lazy" />
+						<img
+							src={image.src}
+							alt=""
+							class="gallery__image"
+							loading="lazy"
+							onclick={() => galleryStore.open(index)} />
 					</li>
 				{/if}
 			{/each}
 		</ul>
 	</div>
+
+	{#if $isGalleryOpen}
+		<GallerySlider images={filteredImages} />
+	{/if}
 </section>
 
 <style lang="scss">
 	.gallery {
 		@include adaptiveValue('padding-top', 50, 30, 991, 320, 1);
 		@include adaptiveValue('padding-bottom', 50, 30, 991, 320, 1);
+
 		/* .gallery__container */
 		&__container {
 		}
