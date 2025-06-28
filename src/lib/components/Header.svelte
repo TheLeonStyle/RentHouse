@@ -1,9 +1,5 @@
 <script>
-	import { modalStore } from '$lib/stores';
-
-	let isMenuOpen = $state(false);
-
-	const handleBurgerClick = () => (isMenuOpen = !isMenuOpen);
+	import { modalStore, isMenuOpen, menuStore } from '$lib/stores';
 </script>
 
 <header class="header">
@@ -53,7 +49,7 @@
 			</button>
 		</nav>
 
-		<button class="header__burger" class:active={isMenuOpen} onclick={handleBurgerClick}>
+		<button class="header__burger" onclick={() => menuStore.open()}>
 			<span></span>
 		</button>
 	</div>
@@ -256,23 +252,23 @@
 				right: 0;
 			}
 
-			&.active {
-				&::before {
-					width: 100%;
-					top: 50%;
-					transform: translateY(-50%) rotate(-45deg);
-				}
+			// &.active {
+			// 	&::before {
+			// 		width: 100%;
+			// 		top: 50%;
+			// 		transform: translateY(-50%) rotate(-45deg);
+			// 	}
 
-				span {
-					width: 0;
-				}
+			// 	span {
+			// 		width: 0;
+			// 	}
 
-				&::after {
-					width: 100%;
-					top: 50%;
-					transform: translateY(-50%) rotate(45deg);
-				}
-			}
+			// 	&::after {
+			// 		width: 100%;
+			// 		top: 50%;
+			// 		transform: translateY(-50%) rotate(45deg);
+			// 	}
+			// }
 		}
 	}
 </style>

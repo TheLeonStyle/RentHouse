@@ -18,3 +18,10 @@ export const modalStore = {
 	open: () => isModalOpen.set(true),
 	close: () => isModalOpen.set(false)
 };
+
+// Menu
+export const isMenuOpen = writable(false);
+export const menuStore = {
+	open: () => isMenuOpen.set(true),
+	close: () => isMenuOpen.set(false)
+};
