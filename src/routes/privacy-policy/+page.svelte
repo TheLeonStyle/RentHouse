@@ -179,10 +179,12 @@
 <style lang="scss">
 	.privacy {
 		padding: rem(100) 0 rem(30);
+		@include adaptiveValue('padding-top', 100, 80, 767, 320, 1);
+		background-color: #e6e6e6;
 
-		@media (max-width: $mobile) {
-			padding-top: rem(20);
-		}
+		// @media (max-width: $mobile) {
+		//	padding-top: rem(20);
+		// }
 
 		&__container {
 		}

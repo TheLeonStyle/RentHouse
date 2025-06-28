@@ -47,7 +47,7 @@
 
 <style lang="scss">
 	.description {
-		background-color: #f1f1f1;
+		background-color: #e6e6e6;
 		border-radius: rem(20);
 
 		@include adaptiveValue('padding-top', 40, 20, 767, 320, 1);
