@@ -1,12 +1,20 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
+// Gallery
 export const isGalleryOpen = writable(false);
 export const galleryIndex = writable(0);
 
 export const galleryStore = {
-  open: (idx = 0) => {
-    galleryIndex.set(idx);
-    isGalleryOpen.set(true);
-  },
-  close: () => isGalleryOpen.set(false)
+	open: (idx = 0) => {
+		galleryIndex.set(idx);
+		isGalleryOpen.set(true);
+	},
+	close: () => isGalleryOpen.set(false)
+};
+
+// Modal
+export const isModalOpen = writable(false);
+export const modalStore = {
+	open: () => isModalOpen.set(true),
+	close: () => isModalOpen.set(false)
 };

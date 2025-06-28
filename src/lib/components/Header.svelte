@@ -1,4 +1,6 @@
 <script>
+	import { modalStore } from '$lib/stores';
+
 	let isMenuOpen = $state(false);
 
 	const handleBurgerClick = () => (isMenuOpen = !isMenuOpen);
@@ -46,7 +48,9 @@
 					</svg>
 				</div>
 			</a>
-			<button class="header__button--feedback">Заказать звонок</button>
+			<button class="header__button--feedback" onclick={() => modalStore.open()}>
+				Заказать звонок
+			</button>
 		</nav>
 
 		<button class="header__burger" class:active={isMenuOpen} onclick={handleBurgerClick}>

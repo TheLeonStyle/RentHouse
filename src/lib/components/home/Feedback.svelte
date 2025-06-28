@@ -76,7 +76,7 @@
 			font-size: inherit;
 			line-height: math.div(22, 16);
 
-			border: rem(1) solid rgba(17, 17, 17, 0.5);
+			border: rem(2) solid rgba(17, 17, 17, 0.5);
 			border-radius: rem(10);
 			padding: rem(10) rem(20);
 			margin-bottom: rem(15);

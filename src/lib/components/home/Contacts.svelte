@@ -1,3 +1,7 @@
+<script>
+	import { modalStore } from '$lib/stores';
+</script>
+
 <section class="contacts">
 	<div class="contacts__container">
 		<div class="contacts__content">
@@ -88,7 +92,7 @@
 				</li>
 			</ul>
 
-			<button class="contacts__button">Заказать звонок</button>
+			<button class="contacts__button" onclick={() => modalStore.open()}>Заказать звонок</button>
 		</div>
 		<iframe
 			src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9523c57e3b1e7c5266fbc72ad8e3481b84d7e7587f889c72705ccfe478d645f&amp;source=constructor"
