@@ -80,6 +80,11 @@
 			border-radius: rem(10);
 			padding: rem(10) rem(20);
 			margin-bottom: rem(15);
+			transition: border-color 0.3s ease 0s;
+
+			&:focus {
+				border-color: #2b7af1;
+			}
 		}
 		/* .feedback__input */
 		&__input {
@@ -100,6 +105,14 @@
 			box-shadow: 0 rem(10) rem(20) 0 rgba(255, 122, 0, 0.2);
 			background: linear-gradient(87deg, rgb(255, 122, 0) 0.269%, rgb(255, 176, 57) 100%);
 			padding: rem(15) rem(30);
+			transition:
+				box-shadow 0.3s ease 0s,
+				opacity 0.3s ease 0s;
+
+			&:hover {
+				box-shadow: 0 rem(5) rem(20) 0 rgba(255, 122, 0, 0.4);
+				opacity: 0.9;
+			}
 		}
 		/* .feedback__content */
 		&__content {

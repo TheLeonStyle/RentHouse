@@ -64,7 +64,7 @@
 
 		<div class="footer__bottom">
 			<p class="footer__copy">© Copyright 2025</p>
-			<a href="/privacy" class="footer__link">Пользовательское соглашение</a>
+			<a href="/privacy-policy" class="footer__link">Пользовательское соглашение</a>
 		</div>
 	</div>
 </footer>
@@ -131,6 +131,11 @@
 			@include adaptiveValue('height', 40, 35, 767, 320, 1);
 			background-color: #2b7af1;
 			border-radius: 50%;
+			transition: background-color 0.3s ease 0s;
+
+			&:hover {
+				background-color: #276ed8;
+			}
 		}
 		/* .footer__bottom */
 		&__bottom {

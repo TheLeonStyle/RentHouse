@@ -9,6 +9,7 @@
 		<a href="/" class="header__logo">RentHouse</a>
 
 		<nav class="header__menu">
+			<button class="header__button">Преимущества</button>
 			<button class="header__button">Фотогалерея</button>
 			<button class="header__button">Контакты</button>
 		</nav>
@@ -42,7 +43,7 @@
 					</svg>
 				</div>
 			</a>
-			<button class="header__button header__button--feedback">Заказать звонок</button>
+			<button class="header__button--feedback">Заказать звонок</button>
 		</nav>
 
 		<button class="header__burger" class:active={isMenuOpen} onclick={handleBurgerClick}>
@@ -114,6 +115,24 @@
 			font-size: inherit;
 			font-weight: 600;
 			line-height: math.div(20, 16);
+			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				height: rem(2);
+				background-color: #ffffff;
+				transition: width 0.3s ease 0s;
+			}
+
+			&:hover {
+				&:before {
+					width: 100%;
+				}
+			}
 
 			&--feedback {
 				color: #ffffff;
@@ -124,11 +143,19 @@
 
 				border-radius: rem(20);
 				box-shadow: 0 rem(10) rem(20) 0 rgba(255, 122, 0, 0.2);
-				background: linear-gradient(87deg, rgb(255, 122, 0) 0.07%, rgb(255, 176, 57) 100%);
+				background: linear-gradient(87deg, rgb(255, 122, 0) 0%, rgb(255, 176, 57) 100%);
 				padding-top: rem(10);
 				padding-bottom: rem(10);
 				@include adaptiveValue('padding-left', 30, 16, 991, 767, 1);
 				@include adaptiveValue('padding-right', 30, 16, 991, 767, 1);
+				transition:
+					box-shadow 0.3s ease 0s,
+					opacity 0.3s ease 0s;
+
+				&:hover {
+					box-shadow: 0 rem(5) rem(20) 0 rgba(255, 122, 0, 0.4);
+					opacity: 0.9;
+				}
 			}
 		}
 		/* .header__link */
@@ -148,6 +175,11 @@
 			@include adaptiveValue('height', 40, 35, 767, 320, 1);
 			background-color: #2b7af1;
 			border-radius: 50%;
+			transition: background-color 0.3s ease 0s;
+
+			&:hover {
+				background-color: #276ed8;
+			}
 		}
 
 		&__burger {
