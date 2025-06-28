@@ -4,10 +4,12 @@
 	import Contacts from '$lib/components/home/Contacts.svelte';
 	import Feedback from '$lib/components/home/Feedback.svelte';
 	import Advantages from '$lib/components/home/Advantages.svelte';
+	import Description from '$lib/components/home/Description.svelte';
 </script>
 
 <Intro />
 <Advantages />
+<Description />
 <Gallery />
 <Contacts />
 <Feedback />

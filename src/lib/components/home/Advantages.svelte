@@ -57,11 +57,8 @@
 
 <style lang="scss">
 	.advantages {
-		background-color: #f1f1f1;
-		border-radius: rem(20);
-
-		padding-top: rem(40);
-		padding-bottom: rem(40);
+		@include adaptiveValue('padding-top', 40, 20, 767, 320, 1);
+		@include adaptiveValue('padding-bottom', 40, 20, 767, 320, 1);
 
 		/* .advantages__container */
 		&__container {
