@@ -6,10 +6,13 @@
 
 <header class="header">
 	<div class="header__container">
-		<a href="/" class="header__logo">RentHouse</a>
+		<a href="/" class="header__logo">
+			<img src="/img/logo.png" alt="" />
+			<p>Царев</p>
+		</a>
 
 		<nav class="header__menu">
-			<button class="header__button">Преимущества</button>
+			<button class="header__button">Описание</button>
 			<button class="header__button">Фотогалерея</button>
 			<button class="header__button">Контакты</button>
 		</nav>
@@ -59,13 +62,18 @@
 
 		padding: rem(10) 0;
 
-		@media (min-width: $mobile) {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 10;
-		}
+		// @media (min-width: $mobile) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+		// }
+
+		// @media (max-width: $mobile) {
+		// background-color: #f1f1f1;
+		// box-shadow: 0 rem(5) rem(10) 0 rgba(#111111, 0.3);
+		// }
 
 		/* .header__container */
 		&__container {
@@ -75,17 +83,38 @@
 			gap: rem(40);
 			@include adaptiveValue('gap', 40, 20, 991, 767, 1);
 
-			@media (max-width: $mobile) {
+			@media (max-width: $tablet) {
 				justify-content: space-between;
 			}
 		}
 		/* .header__logo */
 		&__logo {
-			color: #2b7af1;
+			color: #f1bb2b;
 			// font-size: rem(32);
-			@include adaptiveValue('font-size', 32, 26, 991, 767, 1);
+			@include adaptiveValue('font-size', 24, 18, 991, 767, 1);
 			font-weight: 700;
-			line-height: math.div(50, 32);
+			line-height: math.div(30, 26);
+			text-transform: uppercase;
+
+			// width: rem(80);
+			@include adaptiveValue('width', 80, 60, 991, 767, 1);
+			transition: opacity 0.3s ease 0s;
+
+			img {
+				width: 100%;
+				height: 100%;
+				// object-fit: contain;
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			// @media (max-width: $mobile) {
+			// 	p {
+			// 		display: none;
+			// 	}
+			// }
 		}
 		/* .header__menu */
 		&__menu {
@@ -94,7 +123,7 @@
 			display: flex;
 			align-items: center;
 			@include adaptiveValue('gap', 20, 10, 991, 767, 1);
-			@media (max-width: $mobile) {
+			@media (max-width: $tablet) {
 				display: none;
 			}
 		}
@@ -105,16 +134,16 @@
 			// gap: rem(20);
 			@include adaptiveValue('gap', 20, 10, 991, 767, 1);
 
-			@media (max-width: $mobile) {
+			@media (max-width: $tablet) {
 				display: none;
 			}
 		}
 		/* .header__button */
 		&__button {
 			color: #ffffff;
-			font-size: inherit;
+			font-size: rem(18);
 			font-weight: 600;
-			line-height: math.div(20, 16);
+			line-height: math.div(20, 18);
 			position: relative;
 
 			&:before {
@@ -189,7 +218,7 @@
 			position: relative;
 			z-index: 5;
 
-			@media (max-width: $mobile) {
+			@media (max-width: $tablet) {
 				display: block;
 			}
 
@@ -200,7 +229,7 @@
 				position: absolute;
 				width: 100%;
 				height: rem(3);
-				background-color: #2b7af1;
+				background-color: #ffffff;
 				transition:
 					width 0.15s ease 0s,
 					top 0.3s ease 0s,

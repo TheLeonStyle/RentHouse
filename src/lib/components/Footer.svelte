@@ -1,7 +1,7 @@
 <footer class="footer">
 	<div class="footer__container">
 		<div class="footer__content">
-			<a href="/" class="footer__logo">RentHouse</a>
+			<a href="/" class="footer__logo"><img src="/img/logo.png" alt="" /></a>
 
 			<div class="footer__socials">
 				<a href="" class="footer__social">
@@ -99,11 +99,23 @@
 		}
 		/* .footer__logo */
 		&__logo {
-			color: #2b7af1;
-			// font-size: rem(32);
-			@include adaptiveValue('font-size', 32, 24, 767, 320, 1);
-			font-weight: 700;
-			line-height: math.div(50, 32);
+			// color: #2b7af1;
+			// // font-size: rem(32);
+			// @include adaptiveValue('font-size', 32, 24, 767, 320, 1);
+			// font-weight: 700;
+			// line-height: math.div(50, 32);
+
+			@include adaptiveValue('width', 80, 60, 991, 767, 1);
+			transition: opacity 0.3s ease 0s;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
 		}
 		/* .footer__nav */
 		&__nav {
