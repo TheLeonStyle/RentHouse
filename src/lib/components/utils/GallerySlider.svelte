@@ -41,7 +41,7 @@
 		<ul bind:this={sliderRef} class="slider__items">
 			{#each images as image}
 				<li class="slider__item keen-slider__slide">
-					<img src={image.src} alt="" class="slider__image" />
+					<img src={`/img/home/gallery/${image.src}`} alt="" class="slider__image" />
 				</li>
 			{/each}
 		</ul>

@@ -1,42 +1,16 @@
 <script>
 	import { scale } from 'svelte/transition';
-	import { galleryStore, isGalleryOpen } from '$lib/stores';
+	import { galleryImages, galleryStore, isGalleryOpen } from '$lib/stores';
 	import GallerySlider from '$lib/components/utils/GallerySlider.svelte';
 
-	const categories = ['Все', 'Дом снаружи', 'Дом внутри'];
+	const categories = ['Все', 'Снаружи', 'Первый этаж', 'Второй этаж', 'Третий этаж'];
 	let categoryIndex = $state(0);
 
-	const images = [
-		{
-			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-1.jpg',
-			category: 1
-		},
-		{
-			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-4.jpg',
-			category: 1
-		},
-		{
-			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-snaruzhi-4-2.jpg',
-			category: 2
-		},
-		{
-			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-18.jpg',
-			category: 2
-		},
-		{
-			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-20.jpg',
-			category: 1
-		},
-		{
-			src: 'https://domnareke30.ru/wp-content/uploads/2024/05/dom-vnutri-4-22.jpg',
-			category: 2
-		}
-	];
 
 	const handleCategoryClick = (index) => (categoryIndex = index);
 
 	let filteredImages = $derived(
-		categoryIndex === 0 ? images : images.filter((img) => img.category === categoryIndex)
+		categoryIndex === 0 ? galleryImages : galleryImages.filter((img) => img.category === categoryIndex)
 	);
 </script>
 
@@ -60,7 +34,7 @@
 				{#if categoryIndex === 0 || categoryIndex === image.category}
 					<li class="gallery__item" transition:scale>
 						<img
-							src={image.src}
+							src={`/img/home/gallery/${image.src}`}
 							alt=""
 							class="gallery__image"
 							loading="lazy"

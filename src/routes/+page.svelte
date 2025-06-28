@@ -9,7 +9,7 @@
 
 <Intro />
 <Advantages />
-<Description/>
+<Description />
 <Gallery />
 <Contacts />
 <Feedback />
