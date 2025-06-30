@@ -3,14 +3,16 @@
 	import { galleryImages, galleryStore, isGalleryOpen } from '$lib/stores';
 	import GallerySlider from '$lib/components/utils/GallerySlider.svelte';
 
+
 	const categories = ['Все', 'Снаружи', 'Первый этаж', 'Второй этаж', 'Третий этаж'];
 	let categoryIndex = $state(0);
-
 
 	const handleCategoryClick = (index) => (categoryIndex = index);
 
 	let filteredImages = $derived(
-		categoryIndex === 0 ? galleryImages : galleryImages.filter((img) => img.category === categoryIndex)
+		categoryIndex === 0
+			? galleryImages
+			: galleryImages.filter((img) => img.category === categoryIndex)
 	);
 </script>
 
