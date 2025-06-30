@@ -74,7 +74,6 @@
 		{ src: 'second_floor/17.webp', category: 3 },
 		{ src: 'second_floor/18.webp', category: 3 },
 		{ src: 'second_floor/19.webp', category: 3 },
-		{ src: 'second_floor/20.webp', category: 3 },
 
 		{ src: 'third_floor/1.webp', category: 4 },
 		{ src: 'third_floor/2.webp', category: 4 },
