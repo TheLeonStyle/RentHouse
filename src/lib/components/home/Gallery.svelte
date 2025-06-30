@@ -3,8 +3,15 @@
 	import { galleryImages, galleryStore, isGalleryOpen } from '$lib/stores';
 	import GallerySlider from '$lib/components/utils/GallerySlider.svelte';
 
-
-	const categories = ['Все', 'Снаружи', 'Первый этаж', 'Второй этаж', 'Третий этаж'];
+	const categories = [
+		'Все',
+		'Территория',
+		'Первый этаж',
+		'Второй этаж',
+		'Третий этаж',
+		'Баня',
+		'Летняя кухня и Веранда'
+	];
 	let categoryIndex = $state(0);
 
 	const handleCategoryClick = (index) => (categoryIndex = index);
@@ -71,8 +78,8 @@
 			justify-content: center;
 			flex-wrap: wrap;
 			// gap: rem(40);
-			@include adaptiveValue('gap', 40, 20, 767, 320, 1);
-
+			@include adaptiveValue('column-gap', 30, 20, 767, 320, 1);
+			row-gap: rem(20);
 			// margin-bottom: rem(30);
 			@include adaptiveValue('margin-bottom', 30, 20, 767, 320, 1);
 		}
@@ -107,13 +114,13 @@
 		/* .gallery__items */
 		&__items {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			gap: rem(10);
 			@media (max-width: $mobile) {
-				grid-template-columns: repeat(2, 1fr);
+				grid-template-columns: repeat(3, 1fr);
 			}
 			@media (max-width: $mobileSmall) {
-				grid-template-columns: repeat(1, 1fr);
+				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 		/* .gallery__item */
