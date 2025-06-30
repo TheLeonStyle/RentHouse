@@ -4,7 +4,7 @@
 			<a href="/" class="footer__logo"><img src="/img/logo.png" alt="" /></a>
 
 			<div class="footer__socials">
-				<a href="" class="footer__social">
+				<a href="mailto:dompremium30@mail.ru" class="footer__social" target="_blank">
 					<div class="footer__icon">
 						<svg width="18" height="13.414627" viewBox="0 0 18 13.4146">
 							<path
@@ -22,7 +22,7 @@
 						</svg>
 					</div>
 				</a>
-				<a href="" class="footer__social">
+				<a href="tel:+79272820807" class="footer__social" target="_blank">
 					<div class="footer__icon">
 						<svg width="16.258301" height="16.251770" viewBox="0 0 16.2583 16.2518">
 							<path
@@ -31,7 +31,7 @@
 						</svg>
 					</div>
 				</a>
-				<a href="" class="footer__social">
+				<a href="https://vk.com/id1054620321" class="footer__social" target="_blank">
 					<div class="footer__icon">
 						<svg width="20.866699" height="12.121338" viewBox="0 0 20.8667 12.1213">
 							<path
@@ -40,7 +40,7 @@
 						</svg>
 					</div>
 				</a>
-				<a href="" class="footer__social">
+				<a href="https://t.me/dompremiumtsarev" class="footer__social" target="_blank">
 					<div class="footer__icon">
 						<svg width="20" height="17.446289" viewBox="0 0 20 17.4463">
 							<path
@@ -49,7 +49,7 @@
 						</svg>
 					</div>
 				</a>
-				<a href="" class="footer__social">
+				<a href="https://wa.me/+79272820807" class="footer__social" target="_blank">
 					<div class="footer__icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30">
 							<path

@@ -17,11 +17,11 @@
 									fill="#FFFFFF" />
 							</svg>
 						</div>
-						Березники, ул. Юбилейная 108, ул. Гагарина 59
+						Астрахань, СТ Садовод (Облфинотдела), 33
 					</a>
 				</li>
 				<li class="contacts__item">
-					<a href="mailto:mail@yandex.ru" target="_blank" class="contacts__link">
+					<a href="mailto:dompremium30@mail.ru" target="_blank" class="contacts__link">
 						<div class="contacts__icon">
 							<svg width="18" height="13.414627" viewBox="0 0 18 13.4146">
 								<path
@@ -38,11 +38,11 @@
 									fill="#FFFFFF" />
 							</svg>
 						</div>
-						mail@yandex.ru
+						dompremium30@mail.ru
 					</a>
 				</li>
 				<li class="contacts__item">
-					<a href="tel:+79504444544" target="_blank" class="contacts__link">
+					<a href="tel:+79272820807" target="_blank" class="contacts__link">
 						<div class="contacts__icon">
 							<svg width="16.258301" height="16.251770" viewBox="0 0 16.2583 16.2518">
 								<path
@@ -50,11 +50,11 @@
 									fill="#FFFFFF" />
 							</svg>
 						</div>
-						+7 (950) 444-45-44
+						+7 (927) 282-08-07
 					</a>
 				</li>
 				<li class="contacts__item">
-					<a href="https://vk.ru" target="_blank" class="contacts__link">
+					<a href="https://vk.com/id1054620321" target="_blank" class="contacts__link">
 						<div class="contacts__icon">
 							<svg width="20.866699" height="12.121338" viewBox="0 0 20.8667 12.1213">
 								<path
@@ -62,11 +62,11 @@
 									fill="#FFFFFF" />
 							</svg>
 						</div>
-						Вконтакте
+						id1054620321
 					</a>
 				</li>
 				<li class="contacts__item">
-					<a href="https://telegram.org" target="_blank" class="contacts__link">
+					<a href="https://t.me/dompremiumtsarev" target="_blank" class="contacts__link">
 						<div class="contacts__icon">
 							<svg width="20" height="17.446289" viewBox="0 0 20 17.4463">
 								<path
@@ -74,11 +74,11 @@
 									fill="#FFFFFF" />
 							</svg>
 						</div>
-						Телеграм
+						@dompremiumtsarev
 					</a>
 				</li>
 				<li class="contacts__item">
-					<a href="https://whatsapp.com" target="_blank" class="contacts__link">
+					<a href="https://wa.me/+79272820807" target="_blank" class="contacts__link">
 						<div class="contacts__icon">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30">
 								<path
@@ -87,7 +87,7 @@
 								</path>
 							</svg>
 						</div>
-						Ватсапп
+						wa.me/+79272820807
 					</a>
 				</li>
 			</ul>
@@ -95,8 +95,7 @@
 			<button class="contacts__button" onclick={() => modalStore.open()}>Заказать звонок</button>
 		</div>
 		<iframe
-			src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9523c57e3b1e7c5266fbc72ad8e3481b84d7e7587f889c72705ccfe478d645f&amp;source=constructor"
-			frameborder="0"
+			src="https://yandex.ru/map-widget/v1/?um=constructor%3A349560370a37dcb99870faaaf693887c7ce618a0bb6285ac46ad794469b1e4c0&amp;source=constructor"
 			class="contacts__maps">
 		</iframe>
 	</div>
@@ -220,8 +219,11 @@
 		/* .contacts__maps */
 		&__maps {
 			width: 100%;
-			// height: rem(500);
+			max-width: rem(800); // height: rem(500);
 			@include adaptiveValue('height', 500, 430, 991, 767, 1);
+			@media (max-width: $mobile) {
+				height: rem(320);
+			}
 		}
 	}
 </style>

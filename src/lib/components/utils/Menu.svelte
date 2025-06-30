@@ -15,7 +15,7 @@
 		</nav>
 
 		<nav class="menu__nav menu__nav--bottom">
-			<a href="https://telegram.org" target="_blank" class="menu__link">
+			<a href="https://t.me/dompremiumtsarev" target="_blank" class="menu__link">
 				<div class="menu__icon">
 					<svg width="20" height="17.446289" viewBox="0 0 20 17.4463">
 						<path
@@ -24,7 +24,7 @@
 					</svg>
 				</div>
 			</a>
-			<a href="https://whatsapp.com" target="_blank" class="menu__link">
+			<a href="https://wa.me/+79272820807" target="_blank" class="menu__link">
 				<div class="menu__icon">
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30">
 						<path
@@ -34,7 +34,7 @@
 					</svg>
 				</div>
 			</a>
-			<a href="tel:+79504444544" target="_blank" class="menu__link">
+			<a href="tel:+79272820807" target="_blank" class="menu__link">
 				<div class="menu__icon">
 					<svg width="16.258301" height="16.251770" viewBox="0 0 16.2583 16.2518">
 						<path
