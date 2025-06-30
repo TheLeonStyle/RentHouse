@@ -54,7 +54,6 @@
 		{ src: 'first_floor/21.webp', category: 2 },
 		{ src: 'first_floor/22.webp', category: 2 },
 		{ src: 'first_floor/23.webp', category: 2 },
-		{ src: 'first_floor/24.webp', category: 2 },
 
 		{ src: 'second_floor/1.webp', category: 3 },
 		{ src: 'second_floor/2.webp', category: 3 },
