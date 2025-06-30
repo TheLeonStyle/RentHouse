@@ -1,11 +1,68 @@
+<script>
+	import { slide } from 'svelte/transition';
+
+	let contactError = $state(''); // Сообщение об ошибке валидаций контактов
+	let isRequestSent = $state(false); // Показать/скрыть сообщение после отправки формы
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(event.target);
+		const { name, contact, message } = Object.fromEntries(formData);
+
+		// Валидация контактов
+		if (!contact.trim()) {
+			contactError = 'Введите контактные данные';
+		} else if (contact.trim().length < 5) {
+			contactError = 'Контакты должны быть не короче 5 символов';
+		} else {
+			contactError = '';
+		}
+
+		if (contactError) return; // Если есть ошибка валидации контактов - выходим
+
+		fetch('/api/telegram', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ name, contact, message })
+		});
+
+		isRequestSent = true; // Показываем сообщение после отправки формы
+
+		setTimeout(() => {
+			isRequestSent = false;
+		}, 5000);
+	};
+</script>
+
 <section class="feedback">
 	<div class="feedback__container">
-		<form action="" class="feedback__form">
+		<form action="" class="feedback__form" onsubmit={handleSubmit}>
 			<h2 class="feedback__title text">Напишите нам</h2>
 			<input name="name" type="text" placeholder="Имя" class="feedback__input" />
-			<input name="phone" type="tel" placeholder="Телефон" class="feedback__input" />
+			<input name="contact" type="tel" placeholder="Телефон" class="feedback__input" />
 			<!-- prettier-ignore -->
 			<textarea name="message" placeholder="Ваше сообщение" id="" class="feedback__textarea" rows="6"></textarea>
+			{#if contactError}
+				<label
+					class="feedback__label feedback__label-error"
+					role="alert"
+					aria-live="assertive"
+					transition:slide>
+					{contactError}
+				</label>
+			{/if}
+			{#if isRequestSent}
+				<label
+					class="feedback__label feedback__label-success"
+					role="alert"
+					aria-live="polite"
+					transition:slide>
+					Заявка отправлена
+				</label>
+			{/if}
 			<button class="feedback__button">Отправить</button>
 		</form>
 
@@ -92,6 +149,19 @@
 		/* .feedback__textarea */
 		&__textarea {
 			resize: none;
+		}
+		/* .feedback__label */
+		&__label {
+			font-weight: 600;
+			line-height: math.div(22, 16);
+			margin-bottom: rem(10);
+
+			&-error {
+				color: #be0000;
+			}
+			&-success {
+				color: #02cc02;
+			}
 		}
 		/* .feedback__button */
 		&__button {

@@ -2,8 +2,39 @@
 	import { modalStore } from '$lib/stores';
 	import { slide } from 'svelte/transition';
 
-	const handleSubmit = (event) => {
+	let contactError = $state(''); // Сообщение об ошибке валидаций контактов
+	let isRequestSent = $state(false); // Показать/скрыть сообщение после отправки формы
+
+	const handleSubmit = async (event) => {
 		event.preventDefault();
+
+		const formData = new FormData(event.target);
+		const { name, contact } = Object.fromEntries(formData);
+
+		// Валидация контактов
+		if (!contact.trim()) {
+			contactError = 'Введите контактные данные';
+		} else if (contact.trim().length < 5) {
+			contactError = 'Контакты должны быть не короче 5 символов';
+		} else {
+			contactError = '';
+		}
+
+		if (contactError) return; // Если есть ошибка валидации контактов - выходим
+
+		fetch('/api/telegram', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ name, contact })
+		});
+
+		isRequestSent = true; // Показываем сообщение после отправки формы
+
+		setTimeout(() => {
+			isRequestSent = false;
+		}, 5000);
 	};
 </script>
 
@@ -13,7 +44,7 @@
 		class="modal__form"
 		onsubmit={handleSubmit}
 		onclick={(event) => event.stopPropagation()}>
-		<button class="modal__close" onclick={() => modalStore.close()}>
+		<button type="button" class="modal__close" onclick={() => modalStore.close()}>
 			<svg viewBox="0 0 50 50">
 				<path
 					d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z" />
@@ -22,9 +53,27 @@
 
 		<h2 class="modal__title">Напишите нам</h2>
 		<label for="name" class="modal__label">Ваше имя</label>
-		<input id="name" type="text" class="modal__input" />
+		<input id="name" name="name" type="text" class="modal__input" />
 		<label for="contact" class="modal__label">Ваши контакты</label>
-		<input id="contact" type="text" class="modal__input" />
+		<input id="contact" name="contact" type="text" class="modal__input" />
+		{#if contactError}
+			<label
+				class="modal__label modal__label-error"
+				role="alert"
+				aria-live="assertive"
+				transition:slide>
+				{contactError}
+			</label>
+		{/if}
+		{#if isRequestSent}
+			<label
+				class="modal__label modal__label-success"
+				role="alert"
+				aria-live="polite"
+				transition:slide>
+				Заявка отправлена
+			</label>
+		{/if}
 		<button class="modal__button">Отправить</button>
 	</form>
 </dialog>
@@ -88,6 +137,13 @@
 			font-weight: 600;
 			line-height: math.div(22, 16);
 			margin-bottom: rem(5);
+
+			&-error {
+				color: #be0000;
+			}
+			&-success {
+				color: #02cc02;
+			}
 		}
 		/* .modal__input */
 		&__input {
