@@ -2,7 +2,7 @@
 	import { modalStore } from '$lib/stores';
 </script>
 
-<section class="contacts">
+<section class="contacts" id="contacts">
 	<div class="contacts__container">
 		<div class="contacts__content">
 			<h2 class="contacts__text text">Контакты</h2>

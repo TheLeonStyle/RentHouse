@@ -1,5 +1,6 @@
 <script>
 	import { modalStore, isMenuOpen, menuStore } from '$lib/stores';
+	import { scrollTo } from '$lib/utils/scrollTo';
 </script>
 
 <header class="header">
@@ -10,9 +11,9 @@
 		</a>
 
 		<nav class="header__menu">
-			<button class="header__button">Описание</button>
-			<button class="header__button">Фотогалерея</button>
-			<button class="header__button">Контакты</button>
+			<button class="header__button" onclick={() => scrollTo('description')}>Описание</button>
+			<button class="header__button" onclick={() => scrollTo('gallery')}>Фотогалерея</button>
+			<button class="header__button" onclick={() => scrollTo('contacts')}>Контакты</button>
 		</nav>
 
 		<nav class="header__nav">

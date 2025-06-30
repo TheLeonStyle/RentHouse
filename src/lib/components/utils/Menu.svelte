@@ -1,6 +1,17 @@
 <script>
-	import { menuStore, isMenuOpen } from '$lib/stores';
+	import { menuStore, isMenuOpen, modalStore } from '$lib/stores';
+	import { scrollTo } from '$lib/utils/scrollTo';
 	import { fade, fly, scale, slide } from 'svelte/transition';
+
+	const handleClickButton = () => {
+		menuStore.close();
+		modalStore.open();
+	};
+
+	const handleClickNav = (id) => {
+		menuStore.close();
+		scrollTo(id);
+	};
 </script>
 
 <section class="menu" class:active={$isMenuOpen} onclick={() => menuStore.close()}>
@@ -9,9 +20,9 @@
 		class:active={$isMenuOpen}
 		onclick={(event) => event.stopPropagation()}>
 		<nav class="menu__nav">
-			<button class="menu__button">Описание</button>
-			<button class="menu__button">Фотогалерея</button>
-			<button class="menu__button">Контакты</button>
+			<button class="menu__button" onclick={() => handleClickNav('description')}>Описание</button>
+			<button class="menu__button" onclick={() => handleClickNav('gallery')}>Фотогалерея</button>
+			<button class="menu__button" onclick={() => handleClickNav('contacts')}>Контакты</button>
 		</nav>
 
 		<nav class="menu__nav menu__nav--bottom">
@@ -43,7 +54,7 @@
 					</svg>
 				</div>
 			</a>
-			<button class="menu__button--feedback">Заказать звонок</button>
+			<button class="menu__button--feedback" onclick={handleClickButton}>Заказать звонок</button>
 		</nav>
 	</div>
 </section>

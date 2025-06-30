@@ -1,4 +1,4 @@
-<section class="description">
+<section class="description" id="description">
 	<div class="description__container">
 		<!-- <h2 class="contacts__subtitle subtitle">Описание</h2> -->
 		<div class="description__content">
