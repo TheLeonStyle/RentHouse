@@ -30,6 +30,8 @@
 		{ src: 'outside/13.webp', category: 1 },
 		{ src: 'outside/14.webp', category: 1 },
 		{ src: 'outside/15.webp', category: 1 },
+		{ src: 'outside/16.webp', category: 1 },
+		{ src: 'outside/17.webp', category: 1 },
 
 		{ src: 'first_floor/1.webp', category: 2 },
 		{ src: 'first_floor/2.webp', category: 2 },
