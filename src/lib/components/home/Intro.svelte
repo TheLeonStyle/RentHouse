@@ -34,7 +34,7 @@
 				<div class="intro__text intro__text--left">
 					<h2 class="intro__title">Уютный гостевой дом "Premium Царев"</h2>
 					<p class="intro__subtitle">
-						Тихий уголок на берегу реки всего в 10 минутах от центра Астрахани
+						Живописный уголок на берегу реки всего в 10 минутах от центра Астрахани
 					</p>
 				</div>
 			</div>
@@ -44,7 +44,8 @@
 				<div class="intro__text intro__text--center">
 					<h2 class="intro__title">Всё продумано для вашего комфорта</h2>
 					<p class="intro__subtitle">
-						Полностью укомплектованный дом: кухня, спальные комнаты, бассейн, баня, мангальная зона
+						Полностью укомплектованный трёхэтажный дом мебелью и техникой. Сочетание красоты,
+						комфорта и функциональности в доме и на его территории.
 					</p>
 				</div>
 			</div>
@@ -53,8 +54,16 @@
 			<div class="intro__container">
 				<div class="intro__text intro__text--right">
 					<h2 class="intro__title">Бассейн с подогревом и гидромассажем</h2>
+					<p class="intro__subtitle">Чистая и теплая вода круглый год.</p>
+				</div>
+			</div>
+		</li>
+		<li class="intro__item keen-slider__slide">
+			<div class="intro__container">
+				<div class="intro__text intro__text--center">
+					<h2 class="intro__title">Настоящая русская баня на дровах</h2>
 					<p class="intro__subtitle">
-						Чистая вода круглый год, полотенца предоставляются бесплатно
+						Парная с вениками, травяной чай и натуральный мёд в зоне отдыха
 					</p>
 				</div>
 			</div>
@@ -62,9 +71,9 @@
 		<li class="intro__item keen-slider__slide">
 			<div class="intro__container">
 				<div class="intro__text intro__text--left">
-					<h2 class="intro__title">Настоящая баня на дровах</h2>
+					<h2 class="intro__title">Индивидуальный подход к каждому</h2>
 					<p class="intro__subtitle">
-						Парная с вениками, травяной чай и натуральный мёд в зоне отдыха
+						Комфортабельный дом, организация досуга на собственной и на близлежащей территории
 					</p>
 				</div>
 			</div>
@@ -127,6 +136,11 @@
 				background:
 					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
 					url('/img/home/intro/bg4.webp') center / cover no-repeat;
+			}
+			&:nth-child(5) {
+				background:
+					linear-gradient(to bottom, rgba(#111111, 0.5), rgba(#111111, 0.8)),
+					url('/img/home/intro/bg5.webp') center / cover no-repeat;
 			}
 		}
 
