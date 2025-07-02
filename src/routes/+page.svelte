@@ -7,6 +7,13 @@
 	import Description from '$lib/components/home/Description.svelte';
 </script>
 
+<svelte:head>
+	<title>Гостевой дом Premium Царев | Аренда дома с баней и бассейном в Астрахани</title>
+	<meta
+		name="description"
+		title="Уютный гостевой дом на берегу реки Царев в Астрахани. Аренда дома с баней на дровах, бассейном с подогревом и просторной территорией. Идеально для отдыха на природе и уединения." />
+</svelte:head>
+
 <Intro />
 <Advantages />
 <Description />

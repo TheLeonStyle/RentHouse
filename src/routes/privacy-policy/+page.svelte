@@ -1,3 +1,10 @@
+<svelte:head>
+	<title>Политика конфиденциальности</title>
+	<meta
+		name="description"
+		title="Политика конфиденциальности Premium Царев | Аренда дома с баней и бассейном в Астрахани" />
+</svelte:head>
+
 <section class="privacy">
 	<div class="privacy__container">
 		<h1 class="privacy__text">Политика конфиденциальности</h1>
