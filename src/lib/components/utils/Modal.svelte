@@ -38,7 +38,7 @@
 	};
 </script>
 
-<dialog class="modal" onclick={() => modalStore.close()} transition:slide>
+<dialog class="modal" onclick={() => modalStore.close()} tabindex="-1" transition:slide>
 	<form
 		action=""
 		class="modal__form"
@@ -55,7 +55,7 @@
 		<label for="name" class="modal__label">Ваше имя</label>
 		<input id="name" name="name" type="text" class="modal__input" />
 		<label for="contact" class="modal__label">Ваши контакты</label>
-		<input id="contact" name="contact" type="text" class="modal__input" />
+		<input id="contact" name="contact" type="text" class="modal__input" required />
 		{#if contactError}
 			<label
 				class="modal__label modal__label-error"
