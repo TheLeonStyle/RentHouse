@@ -72,8 +72,8 @@
 				обслуживания или просто хочешь оставить свой комментарий, то заполни форму. Мы обязательно
 				ответим тебе, или опубликуем его на нашем сайте.
 			</p>
-			<h3 class="feedback__name">Татьяна Вячеславовна</h3>
-			<p class="feedback__role">Директор гостиницы</p>
+			<!-- <h3 class="feedback__name">Татьяна Вячеславовна</h3>
+			<p class="feedback__role">Директор гостиницы</p> -->
 		</div>
 	</div>
 </section>
@@ -196,16 +196,16 @@
 			margin-bottom: rem(20);
 		}
 		/* .feedback__name */
-		&__name {
-			color: #2b7af1;
-			font-size: rem(18);
-			font-weight: 700;
-			line-height: math.div(28, 18);
-		}
-		/* .feedback__role */
-		&__role {
-			color: #111111;
-			line-height: math.div(26, 16);
-		}
+		// &__name {
+		// 	color: #2b7af1;
+		// 	font-size: rem(18);
+		// 	font-weight: 700;
+		// 	line-height: math.div(28, 18);
+		// }
+		// /* .feedback__role */
+		// &__role {
+		// 	color: #111111;
+		// 	line-height: math.div(26, 16);
+		// }
 	}
 </style>
