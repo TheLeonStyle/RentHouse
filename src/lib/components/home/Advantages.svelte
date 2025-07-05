@@ -39,19 +39,14 @@
 
 		<div class="advantages__videos">
 			<div class="advantages__video">
-				<video controls>
-					<source src="" type="video/mp4" />
-				</video>
-			</div>
-			<div class="advantages__video">
-				<video controls>
-					<source src="" type="video/mp4" />
-				</video>
-			</div>
-			<div class="advantages__video">
-				<video controls>
-					<source src="" type="video/mp4" />
-				</video>
+				<iframe
+					width="720"
+					height="405"
+					src="https://rutube.ru/play/embed/185e98667d217609be24e33116cc9c98/?p=zXnyJcYELeyPffcRIW9RJg"
+					frameBorder="0"
+					allow="clipboard-write; autoplay"
+					allowFullScreen>
+				</iframe>
 			</div>
 		</div>
 	</div>
@@ -118,7 +113,8 @@
 		/* .advantages__videos */
 		&__videos {
 			display: flex;
-			justify-content: space-between;
+			// justify-content: space-between;
+			justify-content: center;
 			gap: rem(20);
 
 			@media (max-width: $mobile) {
@@ -127,10 +123,16 @@
 		}
 		/* .advantages__video */
 		&__video {
-			flex: 0 1 33.33333%;
-			video {
+			// flex: 0 1 33.333%;
+			flex: 0 1 rem(700);
+			height: rem(393);
+			iframe {
 				width: 100%;
 				height: 100%;
+			}
+
+			@media (max-width: $mobile) {
+				flex: 0 1 rem(320);
 			}
 		}
 	}
