@@ -7,7 +7,6 @@
 	<div class="header__container">
 		<a href="/" class="header__logo">
 			<img src="/img/logo.png" alt="" />
-			<p>Царев</p>
 		</a>
 
 		<nav class="header__menu">
@@ -90,13 +89,6 @@
 		}
 		/* .header__logo */
 		&__logo {
-			color: #f1bb2b;
-			// font-size: rem(32);
-			@include adaptiveValue('font-size', 24, 18, 991, 767, 1);
-			font-weight: 700;
-			line-height: math.div(30, 26);
-			text-transform: uppercase;
-
 			// width: rem(80);
 			@include adaptiveValue('width', 80, 60, 991, 767, 1);
 			transition: opacity 0.3s ease 0s;
