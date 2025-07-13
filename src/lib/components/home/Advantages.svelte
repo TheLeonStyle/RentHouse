@@ -1,7 +1,7 @@
 <section class="advantages">
 	<div class="advantages__container">
 		<div class="advantages__content">
-			<h2 class="advantages__text text">Почему выбирают нас</h2>
+			<h2 class="advantages__text text" data-aos="fade-right">Почему выбирают нас</h2>
 
 			<ul class="advantages__items">
 				<li class="advantages__item">
